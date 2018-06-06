@@ -1,7 +1,8 @@
 #Importing
 
 from tkinter import *
-import tkFileDialog
+
+import tkinter.filedialog
 
 #Assumptions
 
@@ -14,18 +15,25 @@ root.configure(bg='gray25')
 #FN Definitions For Left Frames
 
 def files():
-    in_path = tkFileDialog.askopenfilename()
+    file = tkinter.filedialog.askopenfilename()
+    show.set(file)
+show = StringVar(None)
+
+
+
+
 
 def hiithere():
-    inp1=Entry(riteframe)
-    inp1.config(text="source")
-    inp1.grid(row=1,column=2,sticky=S)
+    inp1 = Entry(riteframe, textvariable=show)
+
+    inp1.grid(row=1, column=1, sticky=S)
+
     inp1 = Entry(riteframe)
     inp1.config(text="source")
-    inp1.grid(row=1,column=1, sticky=S)
+    inp1.grid(row=1,column=2, sticky=S)
     but1=Button(riteframe, command=files)
     but1.config(text="source")
-    but1.grid(row=2,column=2)
+    but1.grid(row=2,column=1)
 
 
 
