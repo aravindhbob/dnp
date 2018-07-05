@@ -4,6 +4,21 @@ from tkinter import *
 #from PIL import ImageGrab
 import time
 import autopy
+import socket
+import os
+
+
+
+
+ip = socket.gethostbyname(socket.gethostname())
+clock = time.asctime(time.localtime(time.time()))
+#non=ip + time
+#place= '/root/downloads/ 'non'
+
+'''while True:
+   # for m.png in os.listdir("/root/Downloads"):
+       # if m.png.startswith("m.png"):
+            os.rename('/root/Downloads/m.png, 'place')'''
 
 
 
@@ -24,15 +39,16 @@ def files():
     show.set(file)
 show = StringVar(None)
 
-def hell():
+'''def hell():
     time.sleep(5)
-    ImageGrab.grab().save("Screencap.jpg","JPEG")
+    ImageGrab.grab().save("Screencap.jpg","JPEG")'''
 
 
 def hoii():
     #time.sleep()
+
     pic=autopy.bitmap.capture_screen()
-    pic.save("/root/Downloads/m.png")
+    pic.save("/root/Downloads/" + ip + "_" + clock + ".png")
 
 
 
